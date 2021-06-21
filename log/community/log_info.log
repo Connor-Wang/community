@@ -1,81 +1,50 @@
-2021-06-19 22:07:09,798 INFO [main] c.w.c.LoggerTests [StartupInfoLogger.java:55] Starting LoggerTests using Java 1.8.0_144 on DESKTOP-BS2GAII with PID 7408 (started by Connor in F:\IdeaProjects\community)
-2021-06-19 22:07:09,802 INFO [main] c.w.c.LoggerTests [SpringApplication.java:659] No active profile set, falling back to default profiles: default
-2021-06-19 22:07:11,850 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
-2021-06-19 22:07:12,195 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
-2021-06-19 22:07:13,250 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
-2021-06-19 22:07:13,428 INFO [main] c.w.c.LoggerTests [StartupInfoLogger.java:61] Started LoggerTests in 4.333 seconds (JVM running for 5.61)
-2021-06-19 22:07:13,685 INFO [main] c.w.c.LoggerTests [LoggerTests.java:23] Info log
-2021-06-19 22:07:13,715 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
-2021-06-19 22:07:13,724 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
-2021-06-19 22:42:04,082 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:55] Starting MailTests using Java 1.8.0_144 on DESKTOP-BS2GAII with PID 8072 (started by Connor in F:\IdeaProjects\community)
-2021-06-19 22:42:04,085 INFO [main] c.w.c.MailTests [SpringApplication.java:659] No active profile set, falling back to default profiles: default
-2021-06-19 22:42:06,302 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
-2021-06-19 22:42:06,648 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
-2021-06-19 22:42:07,707 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
-2021-06-19 22:42:07,854 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:61] Started MailTests in 4.408 seconds (JVM running for 5.794)
-2021-06-19 22:42:09,097 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
-2021-06-19 22:42:09,109 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
-2021-06-19 22:42:51,682 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:55] Starting MailTests using Java 1.8.0_144 on DESKTOP-BS2GAII with PID 716 (started by Connor in F:\IdeaProjects\community)
-2021-06-19 22:42:51,687 INFO [main] c.w.c.MailTests [SpringApplication.java:659] No active profile set, falling back to default profiles: default
-2021-06-19 22:42:53,857 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
-2021-06-19 22:42:54,198 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
-2021-06-19 22:42:55,293 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
-2021-06-19 22:42:55,462 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:61] Started MailTests in 4.409 seconds (JVM running for 5.72)
-2021-06-19 22:42:56,634 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
-2021-06-19 22:42:56,645 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
-2021-06-19 22:47:55,780 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:55] Starting MailTests using Java 1.8.0_144 on DESKTOP-BS2GAII with PID 16756 (started by Connor in F:\IdeaProjects\community)
-2021-06-19 22:47:55,826 INFO [main] c.w.c.MailTests [SpringApplication.java:659] No active profile set, falling back to default profiles: default
-2021-06-19 22:47:58,248 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
-2021-06-19 22:47:58,562 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
-2021-06-19 22:47:59,655 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
-2021-06-19 22:47:59,812 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:61] Started MailTests in 4.584 seconds (JVM running for 6.026)
-2021-06-19 22:48:01,925 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
-2021-06-19 22:48:01,936 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
-2021-06-19 22:51:50,102 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:55] Starting MailTests using Java 1.8.0_144 on DESKTOP-BS2GAII with PID 18648 (started by Connor in F:\IdeaProjects\community)
-2021-06-19 22:51:50,107 INFO [main] c.w.c.MailTests [SpringApplication.java:659] No active profile set, falling back to default profiles: default
-2021-06-19 22:51:52,478 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
-2021-06-19 22:51:52,794 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
-2021-06-19 22:51:53,780 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
-2021-06-19 22:51:53,911 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:61] Started MailTests in 4.474 seconds (JVM running for 5.652)
-2021-06-19 22:51:55,900 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
-2021-06-19 22:51:55,912 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
-2021-06-19 22:57:04,739 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:55] Starting MailTests using Java 1.8.0_144 on DESKTOP-BS2GAII with PID 16204 (started by Connor in F:\IdeaProjects\community)
-2021-06-19 22:57:04,742 INFO [main] c.w.c.MailTests [SpringApplication.java:659] No active profile set, falling back to default profiles: default
-2021-06-19 22:57:06,771 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
-2021-06-19 22:57:07,097 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
-2021-06-19 22:57:08,124 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
-2021-06-19 22:57:08,275 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:61] Started MailTests in 4.107 seconds (JVM running for 5.363)
-2021-06-19 22:57:10,124 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
-2021-06-19 22:57:10,136 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
-2021-06-19 23:01:52,706 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:55] Starting MailTests using Java 1.8.0_144 on DESKTOP-BS2GAII with PID 16796 (started by Connor in F:\IdeaProjects\community)
-2021-06-19 23:01:52,710 INFO [main] c.w.c.MailTests [SpringApplication.java:659] No active profile set, falling back to default profiles: default
-2021-06-19 23:01:54,926 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
-2021-06-19 23:01:55,313 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
-2021-06-19 23:01:56,376 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
-2021-06-19 23:01:56,529 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:61] Started MailTests in 4.488 seconds (JVM running for 5.813)
-2021-06-19 23:01:57,016 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
-2021-06-19 23:01:57,025 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
-2021-06-19 23:07:04,746 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:55] Starting MailTests using Java 1.8.0_144 on DESKTOP-BS2GAII with PID 18236 (started by Connor in F:\IdeaProjects\community)
-2021-06-19 23:07:04,749 INFO [main] c.w.c.MailTests [SpringApplication.java:659] No active profile set, falling back to default profiles: default
-2021-06-19 23:07:06,811 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
-2021-06-19 23:07:07,152 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
-2021-06-19 23:07:08,184 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
-2021-06-19 23:07:08,322 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:61] Started MailTests in 4.158 seconds (JVM running for 5.436)
-2021-06-19 23:07:08,772 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
-2021-06-19 23:07:08,781 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
-2021-06-19 23:08:38,774 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:55] Starting MailTests using Java 1.8.0_144 on DESKTOP-BS2GAII with PID 3672 (started by Connor in F:\IdeaProjects\community)
-2021-06-19 23:08:38,778 INFO [main] c.w.c.MailTests [SpringApplication.java:659] No active profile set, falling back to default profiles: default
-2021-06-19 23:08:40,813 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
-2021-06-19 23:08:41,135 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
-2021-06-19 23:08:42,121 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
-2021-06-19 23:08:42,267 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:61] Started MailTests in 4.102 seconds (JVM running for 5.32)
-2021-06-19 23:08:42,708 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
-2021-06-19 23:08:42,717 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
-2021-06-19 23:09:13,881 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:55] Starting MailTests using Java 1.8.0_144 on DESKTOP-BS2GAII with PID 13848 (started by Connor in F:\IdeaProjects\community)
-2021-06-19 23:09:13,885 INFO [main] c.w.c.MailTests [SpringApplication.java:659] No active profile set, falling back to default profiles: default
-2021-06-19 23:09:15,937 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
-2021-06-19 23:09:16,244 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
-2021-06-19 23:09:17,251 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
-2021-06-19 23:09:17,390 INFO [main] c.w.c.MailTests [StartupInfoLogger.java:61] Started MailTests in 4.132 seconds (JVM running for 5.353)
-2021-06-19 23:09:19,662 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
-2021-06-19 23:09:19,674 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2021-06-21 10:50:51,659 INFO [restartedMain] c.w.c.CommunityApplication [StartupInfoLogger.java:55] Starting CommunityApplication using Java 1.8.0_144 on DESKTOP-BS2GAII with PID 12868 (F:\IdeaProjects\community\target\classes started by Connor in F:\IdeaProjects\community)
+2021-06-21 10:50:51,666 INFO [restartedMain] c.w.c.CommunityApplication [SpringApplication.java:659] No active profile set, falling back to default profiles: default
+2021-06-21 10:50:51,746 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-21 10:50:51,747 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-21 10:50:53,206 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-06-21 10:50:53,213 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-06-21 10:50:53,214 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-06-21 10:50:53,214 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-21 10:50:53,216 INFO [restartedMain] o.a.c.c.AprLifecycleListener [DirectJDKLog.java:173] Loaded Apache Tomcat Native library [1.2.28] using APR version [1.7.0].
+2021-06-21 10:50:53,216 INFO [restartedMain] o.a.c.c.AprLifecycleListener [DirectJDKLog.java:173] APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-06-21 10:50:53,217 INFO [restartedMain] o.a.c.c.AprLifecycleListener [DirectJDKLog.java:173] APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-06-21 10:50:53,221 INFO [restartedMain] o.a.c.c.AprLifecycleListener [DirectJDKLog.java:173] OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-06-21 10:50:53,300 INFO [restartedMain] o.a.c.c.C.[.[.[/community] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-06-21 10:50:53,301 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 1532 ms
+2021-06-21 10:50:53,714 INFO [restartedMain] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:478] Autowired annotation is not supported on static fields: private static final org.slf4j.Logger com.wcaaotr.community.controller.LoginController.logger
+2021-06-21 10:50:53,947 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-06-21 10:50:54,050 INFO [restartedMain] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-06-21 10:50:54,622 INFO [restartedMain] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-06-21 10:50:54,688 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-06-21 10:50:54,707 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-06-21 10:50:54,727 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/community'
+2021-06-21 10:50:54,744 INFO [restartedMain] c.w.c.CommunityApplication [StartupInfoLogger.java:61] Started CommunityApplication in 3.906 seconds (JVM running for 5.253)
+2021-06-21 10:50:54,798 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/community] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-21 10:50:54,798 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-06-21 10:50:54,800 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-06-21 10:51:53,007 INFO [restartedMain] c.w.c.CommunityApplication [StartupInfoLogger.java:55] Starting CommunityApplication using Java 1.8.0_144 on DESKTOP-BS2GAII with PID 15700 (F:\IdeaProjects\community\target\classes started by Connor in F:\IdeaProjects\community)
+2021-06-21 10:51:53,012 INFO [restartedMain] c.w.c.CommunityApplication [SpringApplication.java:659] No active profile set, falling back to default profiles: default
+2021-06-21 10:51:53,067 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-21 10:51:53,067 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-21 10:51:54,274 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-06-21 10:51:54,282 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-06-21 10:51:54,283 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-06-21 10:51:54,284 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-21 10:51:54,286 INFO [restartedMain] o.a.c.c.AprLifecycleListener [DirectJDKLog.java:173] Loaded Apache Tomcat Native library [1.2.28] using APR version [1.7.0].
+2021-06-21 10:51:54,287 INFO [restartedMain] o.a.c.c.AprLifecycleListener [DirectJDKLog.java:173] APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-06-21 10:51:54,287 INFO [restartedMain] o.a.c.c.AprLifecycleListener [DirectJDKLog.java:173] APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-06-21 10:51:54,291 INFO [restartedMain] o.a.c.c.AprLifecycleListener [DirectJDKLog.java:173] OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-06-21 10:51:54,362 INFO [restartedMain] o.a.c.c.C.[.[.[/community] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-06-21 10:51:54,363 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 1295 ms
+2021-06-21 10:51:54,688 INFO [restartedMain] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:478] Autowired annotation is not supported on static fields: private static final org.slf4j.Logger com.wcaaotr.community.controller.LoginController.logger
+2021-06-21 10:51:54,930 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-06-21 10:51:55,034 INFO [restartedMain] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-06-21 10:51:55,585 INFO [restartedMain] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-06-21 10:51:55,645 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-06-21 10:51:55,666 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-06-21 10:51:55,684 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/community'
+2021-06-21 10:51:55,700 INFO [restartedMain] c.w.c.CommunityApplication [StartupInfoLogger.java:61] Started CommunityApplication in 3.425 seconds (JVM running for 4.416)
+2021-06-21 10:52:09,359 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/community] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-21 10:52:09,359 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-06-21 10:52:09,361 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms

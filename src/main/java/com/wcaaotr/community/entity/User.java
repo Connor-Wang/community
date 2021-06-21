@@ -19,9 +19,9 @@ public class User {
     private String password;
     private String salt;
     private String email;
-    private Integer type;
-    private Integer status;
+    private Integer type; // 0-普通用户 1-版主 2-管理员
+    private Integer status; // 0-未激活 1-已激活
     private String activationCode;
-    private String headerUrl;
+    private String headerUrl; // 用户头像的 url
     private Date createTime;
 }
