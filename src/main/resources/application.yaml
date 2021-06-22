@@ -20,6 +20,7 @@ pagehelper:
 community:
   path:
     domain: http://localhost:8080
+    upload: F:\IdeaProjects\community\upload
 
 spring:
   thymeleaf:

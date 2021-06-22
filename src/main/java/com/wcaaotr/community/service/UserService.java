@@ -1,6 +1,8 @@
 package com.wcaaotr.community.service;
 
+import com.wcaaotr.community.dao.LoginTicketMapper;
 import com.wcaaotr.community.dao.UserMapper;
+import com.wcaaotr.community.entity.LoginTicket;
 import com.wcaaotr.community.entity.User;
 import com.wcaaotr.community.util.CommunityConstant;
 import com.wcaaotr.community.util.CommunityUtil;
@@ -26,13 +28,14 @@ public class UserService {
 
     @Autowired(required = false)
     private UserMapper userMapper;
+    @Autowired(required = false)
+    private LoginTicketMapper loginTicketMapper;
     @Autowired
     private MailClient mailClient;
     @Autowired
     private TemplateEngine templateEngine;
     @Value("${community.path.domain}")
     private String domain;
-
     @Value("${server.servlet.context-path}")
     private String contextPath;
 
@@ -120,4 +123,89 @@ public class UserService {
         }
     }
 
+    /**
+     * 用户登陆
+     * @param username 用户名
+     * @param password 用户的明文密码
+     * @return 登陆操作的状态
+     */
+    public Map<String, Object> login(String username, String password, int expiredSeconds){
+        Map<String, Object> map = new HashMap<>();
+
+        // 空值处理
+        if(StringUtils.isBlank(username)) {
+            map.put("usernameMsg", "账号不能为空");
+            return map;
+        }
+        if(StringUtils.isBlank(password)) {
+            map.put("passwordMsg", "密码不能为空");
+            return map;
+        }
+
+        // 验证合法性
+        User user = userMapper.selectByName(username);
+        if(user == null){
+            map.put("usernameMsg", "该账号不存在");
+            return map;
+        }
+        if(user.getStatus() == 0){
+            map.put("usernameMsg", "该账号未激活");
+            return map;
+        }
+        password = CommunityUtil.md5(password + user.getSalt());
+        if(!user.getPassword().equals(password)){
+            map.put("passwordMsg", "密码不正确");
+            return map;
+        }
+
+        // 生成登陆凭证
+        LoginTicket ticket = new LoginTicket();
+        ticket.setUserId(user.getId());
+        ticket.setTicket(CommunityUtil.generateUUID());
+        ticket.setStatus(0);
+        ticket.setExpired(new Date(System.currentTimeMillis() + ((long)expiredSeconds) * 1000));
+        loginTicketMapper.insertLoginTicket(ticket);
+
+        map.put("ticket", ticket.getTicket());
+
+        return map;
+    }
+
+    /**
+     * 用户登出
+     * 更改改凭证的状态
+     * @param ticket 登陆凭证
+     */
+    public void logout(String ticket){
+        loginTicketMapper.updateStatus(ticket, 1);
+    }
+
+    /**
+     * 根据 ticket 查询 LoginTicket 对象
+     * @param ticket 登陆凭证中的 ticket
+     * @return 查询到的 LoginTicket 对象
+     */
+    public LoginTicket findLoginTicket(String ticket){
+        return loginTicketMapper.selectByTicket(ticket);
+    }
+
+    /**
+     * 根据 userId 更新用户的头像地址
+     * @param userId 用户的 id
+     * @param headerUrl 新的头像路径
+     * @return 操作的数据条数
+     */
+    public int updateHeaderUrl(Integer userId, String headerUrl){
+        return userMapper.updateHeader(userId, headerUrl);
+    }
+
+    /**
+     * 根据 userId 更新用户的密码
+     * @param userId 用户的 id
+     * @param password 新的密码
+     * @return 操作的数据条数
+     */
+    public int updatePassword(Integer userId, String password){
+        return userMapper.updatePassword(userId, password);
+    }
 }
