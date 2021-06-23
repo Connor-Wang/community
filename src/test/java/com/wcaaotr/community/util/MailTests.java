@@ -1,5 +1,6 @@
-package com.wcaaotr.community;
+package com.wcaaotr.community.util;
 
+import com.wcaaotr.community.CommunityApplication;
 import com.wcaaotr.community.util.MailClient;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

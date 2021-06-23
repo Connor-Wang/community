@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wcaaotr.community.dao.LoginTicketMapper">
 
-    <insert id="insertLoginTicket">
+    <insert id="insertLoginTicket" keyProperty="id">
         insert into community.login_ticket (user_id, ticket, status, expired)
         values (#{userId}, #{ticket}, #{status}, #{expired})
     </insert>

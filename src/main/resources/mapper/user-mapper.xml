@@ -22,7 +22,7 @@
         where email=#{email}
     </select>
 
-    <insert id="insertUser" parameterType="User" keyProperty="id">
+    <insert id="insertUser" parameterType="com.wcaaotr.community.entity.User" keyProperty="id">
         insert into community.user (username, password, salt, email, type, status, activation_code, header_url, create_time)
         values (#{username}, #{password}, #{salt}, #{email}, #{type}, #{status}, #{activationCode}, #{headerUrl}, #{createTime})
     </insert>

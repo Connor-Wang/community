@@ -9,7 +9,8 @@ import com.wcaaotr.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
@@ -30,10 +31,10 @@ public class HomeController {
     @Autowired
     private DiscussPostService discussPostService;
 
-    @GetMapping("/index")
+    @RequestMapping(path = "/index", method = RequestMethod.GET)
     public String getIndexPage(Model model,
                                @RequestParam(defaultValue = "1", value = "pageNum") Integer pageNum,
-                               @RequestParam(defaultValue = "5", value = "pageSize") Integer pageSize){
+                               @RequestParam(defaultValue = "10", value = "pageSize") Integer pageSize){
         PageHelper.startPage(pageNum, pageSize);
         List<DiscussPost> allDiscussPost = discussPostService.findDiscussPosts(0);
         PageInfo<DiscussPost> pageInfo = new PageInfo<DiscussPost>(allDiscussPost);
@@ -51,8 +52,10 @@ public class HomeController {
         model.addAttribute("pageInfo", pageInfo);
         int pageFrom = pageInfo.getPageNum() - 2 > 0 ? pageInfo.getPageNum() - 2 : 1;
         int pageTo = pageInfo.getPageNum() + 2 <= pageInfo.getPages() ? pageInfo.getPageNum() + 2 : pageInfo.getPages();
+        String pagePath = "/index";
         model.addAttribute("pageFrom", pageFrom);
         model.addAttribute("pageTo", pageTo);
+        model.addAttribute("pagePath", pagePath);
         return "index";
     }
 }

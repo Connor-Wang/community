@@ -1,8 +1,6 @@
 package com.wcaaotr.community.entity;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 
 import java.util.Date;
 
@@ -11,8 +9,6 @@ import java.util.Date;
  * @create 2021-06-16-8:44
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class User {
     private Integer id;
     private String username;

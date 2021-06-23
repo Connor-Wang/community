@@ -1,7 +1,7 @@
 package com.wcaaotr.community.config;
 
-import com.wcaaotr.community.controller.interceptor.LoginRequiredInterceptor;
-import com.wcaaotr.community.controller.interceptor.LoginTicketInterceptor;
+import com.wcaaotr.community.interceptor.LoginRequiredInterceptor;
+import com.wcaaotr.community.interceptor.LoginTicketInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

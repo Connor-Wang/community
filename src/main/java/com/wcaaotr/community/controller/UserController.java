@@ -13,9 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletOutputStream;
@@ -24,6 +22,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.lang.annotation.Retention;
 
 /**
  * @author Connor
@@ -121,7 +120,8 @@ public class UserController {
 
     @LoginRequired
     @RequestMapping(path = "/resetpassword", method = RequestMethod.POST)
-    public String updatePassword(Model model, String oldPassword, String newPassword){
+    public String updatePassword(Model model, String oldPassword, String newPassword,
+                                 @CookieValue("ticket") String ticket){
         User user = hostHolder.getUser();
         if(StringUtils.isBlank(oldPassword)){
             model.addAttribute("passworderror", "请输入原密码！");
@@ -134,6 +134,15 @@ public class UserController {
         }
         newPassword = CommunityUtil.md5(newPassword + user.getSalt());
         userService.updatePassword(user.getId(), newPassword);
+        userService.logout(ticket);
         return "redirect:/login";
+    }
+
+    @RequestMapping(path = "/ajax", method = RequestMethod.POST)
+    @ResponseBody
+    public String ajax(String name, int age){
+        System.out.println(name);
+        System.out.println(age);
+        return CommunityUtil.getJSONString(0, "操作成功！");
     }
 }

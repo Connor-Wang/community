@@ -1,18 +1,15 @@
-package com.wcaaotr.community.controller.interceptor;
+package com.wcaaotr.community.interceptor;
 
 import com.wcaaotr.community.entity.LoginTicket;
 import com.wcaaotr.community.entity.User;
 import com.wcaaotr.community.service.UserService;
 import com.wcaaotr.community.util.CookieUtil;
 import com.wcaaotr.community.util.HostHolder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;

@@ -4,6 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wcaaotr.community.dao.DiscussPostMapper">
 
+    <update id="updateCommentCount">
+        update community.discuss_post
+        set comment_count=#{commentCount}
+        where id=#{id}
+    </update>
+
     <select id="selectDiscussPosts" resultType="com.wcaaotr.community.entity.DiscussPost">
         select id, user_id, title, content, type, status, create_time, comment_count, score
         from community.discuss_post
@@ -23,4 +29,14 @@
         </if>
     </select>
 
+    <select id="selectDiscussPostById" resultType="com.wcaaotr.community.entity.DiscussPost">
+        select id, user_id, title, content, type, status, create_time, comment_count, score
+        from discuss_post
+        where id = #{id}
+    </select>
+
+    <insert id="insertDiscussPost" parameterType="com.wcaaotr.community.entity.DiscussPost" keyProperty="id">
+        insert into community.discuss_post (user_id, title, content, type, status, create_time, comment_count, score)
+        values (#{userId}, #{title}, #{content}, #{type}, #{status}, #{createTime}, #{commentCount}, #{score})
+    </insert>
 </mapper>

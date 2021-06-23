@@ -1,4 +1,4 @@
-package com.wcaaotr.community.controller.interceptor;
+package com.wcaaotr.community.interceptor;
 
 import com.wcaaotr.community.annotation.LoginRequired;
 import com.wcaaotr.community.util.HostHolder;

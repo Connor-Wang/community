@@ -6,19 +6,16 @@ import java.util.Date;
 
 /**
  * @author Connor
- * @create 2021-06-16-9:26
+ * @create 2021-06-22-22:36
  */
 @Data
-public class DiscussPost {
-
+public class Comment {
     private Integer id;
     private Integer userId;
-    private String title;
+    private Integer entityType;
+    private Integer entityId;
+    private Integer targetId;
     private String content;
-    private Integer type;
     private Integer status;
     private Date createTime;
-    private Integer commentCount;
-    private Double score;
-
 }
