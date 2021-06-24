@@ -75,8 +75,7 @@ public class SensitiveFilter {
         TrieNode currentNode = rootNode;
         int beginIndex = 0;
         int endIndex = 0;
-        StringBuilder sb = new StringBuilder();
-        System.out.println("filter -> " + text);
+        StringBuilder result = new StringBuilder();
 
         while(endIndex < text.length()){
             char c = text.charAt(endIndex);
@@ -84,29 +83,30 @@ public class SensitiveFilter {
             if(isSymbol(c)){
                 // 当前节点是根节点时，将此符号计入结果，且 begin Index + 1
                 if(currentNode == rootNode){
-                    sb.append(c);
+                    result.append(c);
                     beginIndex++;
                 }
                 endIndex++;
+                continue;
             }
             // 检查下级节点
             currentNode = currentNode.getSubNode(c);
             if(currentNode == null){
                 // 以 beginIndex 开始的字符不是敏感词
-                sb.append(text.charAt(beginIndex));
+                result.append(text.charAt(beginIndex));
                 endIndex = ++beginIndex;
                 currentNode = rootNode;
             } else if (currentNode.isKeyWordEnd()) {
                 // 发现敏感词
-                sb.append(REPLACEMENT);
+                result.append(REPLACEMENT);
                 beginIndex = ++endIndex;
                 currentNode = rootNode;
             } else {
                 endIndex++;
             }
         }
-        sb.append(text.substring(beginIndex));
-        return sb.toString();
+        result.append(text.substring(beginIndex));
+        return result.toString();
     }
 
     /**
@@ -131,7 +131,7 @@ public class SensitiveFilter {
         }
 
         public void setKeyWordEnd(boolean keyWordEnd) {
-            isKeyWordEnd = keyWordEnd;
+            this.isKeyWordEnd = keyWordEnd;
         }
 
         public void addSubNode(Character c, TrieNode node){

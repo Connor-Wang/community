@@ -2,6 +2,7 @@ package com.wcaaotr.community.service;
 
 import com.wcaaotr.community.dao.MessageMapper;
 import com.wcaaotr.community.entity.Message;
+import com.wcaaotr.community.util.Page;
 import com.wcaaotr.community.util.SensitiveFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,5 +50,21 @@ public class MessageService {
 
     public int readMessage(List<Integer> ids){
         return messageMapper.updateStatus(ids, 1);
+    }
+
+    public Message findLatestNotice(int userId, String topic){
+        return messageMapper.selectLatestNotice(userId,topic);
+    }
+
+    public int findNoticeCount(int useId, String topic) {
+        return messageMapper.selectNoticeCount(useId,topic);
+    }
+
+    public int findNoticeUnreadCount(int userId, String topic) {
+        return messageMapper.selectNoticeUnreadCount(userId, topic);
+    }
+
+    public List<Message> findNotices(int userId, String topic){
+        return messageMapper.selectNotices(userId, topic);
     }
 }

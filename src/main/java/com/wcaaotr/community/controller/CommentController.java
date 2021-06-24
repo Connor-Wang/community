@@ -1,7 +1,12 @@
 package com.wcaaotr.community.controller;
 
 import com.wcaaotr.community.entity.Comment;
+import com.wcaaotr.community.entity.DiscussPost;
+import com.wcaaotr.community.entity.Event;
+import com.wcaaotr.community.event.EventProducer;
 import com.wcaaotr.community.service.CommentService;
+import com.wcaaotr.community.service.DiscussPostService;
+import com.wcaaotr.community.util.CommunityConstant;
 import com.wcaaotr.community.util.HostHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +28,10 @@ public class CommentController {
     private CommentService commentService;
     @Autowired
     private HostHolder hostHolder;
+    @Autowired
+    private EventProducer eventProducer;
+    @Autowired
+    private DiscussPostService discussPostService;
 
     @RequestMapping(path = "/add/{discussPostId}", method = RequestMethod.POST)
     public String addComment(@PathVariable("discussPostId") int discussPostId, Comment comment){
@@ -30,6 +39,22 @@ public class CommentController {
         comment.setStatus(0);
         comment.setCreateTime(new Date());
         commentService.addComment(comment);
+        // 触发评论事件
+        Event event = new Event()
+                .setTopic(CommunityConstant.TOPIC_COMMENT)
+                .setUserId(hostHolder.getUser().getId())
+                .setEntityType(comment.getEntityType())
+                .setEntityId(comment.getEntityId())
+                .setData("postId", discussPostId);
+        if(comment.getEntityType() == CommunityConstant.ENTITY_TYPE_POST) {
+            DiscussPost target = discussPostService.findDiscussPostById(comment.getEntityId());
+            event.setEntityUserId(target.getUserId());
+        } else if (comment.getEntityType() == CommunityConstant.ENTITY_TYPE_COMMENT){
+            Comment target = commentService.findCommentById(comment.getEntityId());
+            event.setEntityUserId(target.getUserId());
+        }
+        eventProducer.fireEvent(event);
+
         return "redirect:/discuss/detail/" + discussPostId;
     }
 }
