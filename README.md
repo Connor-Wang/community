@@ -5,3 +5,4 @@ MyBatis
 Thymeleaf  
 pageHelper  
 redis  
+kafka
