@@ -2,6 +2,8 @@ package com.wcaaotr.community.controller;
 
 import com.wcaaotr.community.annotation.LoginRequired;
 import com.wcaaotr.community.entity.User;
+import com.wcaaotr.community.service.FollowService;
+import com.wcaaotr.community.service.LikeService;
 import com.wcaaotr.community.service.UserService;
 import com.wcaaotr.community.util.CommunityConstant;
 import com.wcaaotr.community.util.CommunityUtil;
@@ -16,13 +18,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.lang.annotation.Retention;
 
 /**
  * @author Connor
@@ -41,6 +41,10 @@ public class UserController {
     private String contextPath;
     @Autowired
     private UserService userService;
+    @Autowired
+    private LikeService likeService;
+    @Autowired
+    private FollowService followService;
     @Autowired
     private HostHolder hostHolder;
 
@@ -138,11 +142,30 @@ public class UserController {
         return "redirect:/login";
     }
 
-    @RequestMapping(path = "/ajax", method = RequestMethod.POST)
-    @ResponseBody
-    public String ajax(String name, int age){
-        System.out.println(name);
-        System.out.println(age);
-        return CommunityUtil.getJSONString(0, "操作成功！");
+    // 个人主页
+    @RequestMapping(path = "/profile/{userId}", method = RequestMethod.GET)
+    public String getProfilePage(@PathVariable("userId") int userId, Model model){
+        User user = userService.findUserById(userId);
+        if(user == null) {
+            throw new RuntimeException("该用户不存在");
+        }
+        // 用户
+        model.addAttribute("user", user);
+        // 点赞数量
+        int likeCount = likeService.findUserLikeCount(userId);
+        model.addAttribute("likeCount", likeCount);
+        // 关注数量
+        long followeeCount = followService.findFolloweeCount(userId, CommunityConstant.ENTITY_TYPE_USER);
+        model.addAttribute("followeeCount", followeeCount);
+        // 粉丝数量
+        long followerCount = followService.findFollowerCount(CommunityConstant.ENTITY_TYPE_USER, userId);
+        model.addAttribute("followerCount", followerCount);
+        // 是否已关注
+        boolean hasFollowed = false;
+        if(hostHolder.getUser() != null){
+            hasFollowed = followService.hasFollowed(hostHolder.getUser().getId(), CommunityConstant.ENTITY_TYPE_USER, userId);
+        }
+        model.addAttribute("hasFollowed", hasFollowed);
+        return "/site/profile";
     }
 }

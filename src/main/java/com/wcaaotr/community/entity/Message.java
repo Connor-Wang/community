@@ -11,6 +11,7 @@ import java.util.Date;
 @Data
 public class Message {
 
+    private Integer id;
     private Integer fromId;
     private Integer toId;
     private String conversationId;

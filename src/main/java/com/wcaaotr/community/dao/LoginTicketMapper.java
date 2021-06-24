@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @create 2021-06-21-20:05
  */
 @Mapper
+@Deprecated
 public interface LoginTicketMapper {
 
     int insertLoginTicket(LoginTicket loginTicket);

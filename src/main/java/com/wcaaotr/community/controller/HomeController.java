@@ -5,7 +5,10 @@ import com.github.pagehelper.PageInfo;
 import com.wcaaotr.community.entity.DiscussPost;
 import com.wcaaotr.community.entity.User;
 import com.wcaaotr.community.service.DiscussPostService;
+import com.wcaaotr.community.service.LikeService;
 import com.wcaaotr.community.service.UserService;
+import com.wcaaotr.community.util.CommunityConstant;
+import com.wcaaotr.community.util.CommunityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,9 +30,10 @@ public class HomeController {
 
     @Autowired
     private UserService userService;
-
     @Autowired
     private DiscussPostService discussPostService;
+    @Autowired
+    private LikeService likeService;
 
     @RequestMapping(path = "/index", method = RequestMethod.GET)
     public String getIndexPage(Model model,
@@ -45,17 +49,22 @@ public class HomeController {
                 map.put("post", discussPost);
                 User user = userService.findUserById(discussPost.getUserId());
                 map.put("user", user);
+
+                long likeCount = likeService.findEntityLikeCount(CommunityConstant.ENTITY_TYPE_POST, discussPost.getId());
+                map.put("likeCount",likeCount);
+
                 list.add(map);
             }
         }
         model.addAttribute("discussPosts", list);
         model.addAttribute("pageInfo", pageInfo);
-        int pageFrom = pageInfo.getPageNum() - 2 > 0 ? pageInfo.getPageNum() - 2 : 1;
-        int pageTo = pageInfo.getPageNum() + 2 <= pageInfo.getPages() ? pageInfo.getPageNum() + 2 : pageInfo.getPages();
         String pagePath = "/index";
-        model.addAttribute("pageFrom", pageFrom);
-        model.addAttribute("pageTo", pageTo);
         model.addAttribute("pagePath", pagePath);
         return "index";
+    }
+
+    @RequestMapping(path = "/error", method = RequestMethod.GET)
+    public String getErrorPage(){
+        return "/error/500";
     }
 }

@@ -7,6 +7,7 @@ import com.wcaaotr.community.entity.DiscussPost;
 import com.wcaaotr.community.entity.User;
 import com.wcaaotr.community.service.CommentService;
 import com.wcaaotr.community.service.DiscussPostService;
+import com.wcaaotr.community.service.LikeService;
 import com.wcaaotr.community.service.UserService;
 import com.wcaaotr.community.util.CommunityConstant;
 import com.wcaaotr.community.util.CommunityUtil;
@@ -32,6 +33,8 @@ public class DisscussPostController {
     private DiscussPostService discussPostService;
     @Autowired
     private CommentService commentService;
+    @Autowired
+    private LikeService likeService;
     @Autowired
     private HostHolder hostHolder;
 
@@ -64,6 +67,13 @@ public class DisscussPostController {
         model.addAttribute("post", post);
         User user = userService.findUserById(post.getUserId());
         model.addAttribute("user",user);
+        // 点赞数
+        long likeCount = likeService.findEntityLikeCount(CommunityConstant.ENTITY_TYPE_POST, discussPostId);
+        model.addAttribute("likeCount", likeCount);
+        // 点赞状态
+        int likeStatus = hostHolder.getUser() == null ? 0 :
+                likeService.findEntityLikeStatus(hostHolder.getUser().getId(), CommunityConstant.ENTITY_TYPE_POST, discussPostId);
+        model.addAttribute("likeStatus", likeStatus);
 
         // 评论的分页信息
         PageHelper.startPage(pageNum, pageSize);
@@ -83,6 +93,13 @@ public class DisscussPostController {
                 commentVo.put("comment", comment);
                 // 作者
                 commentVo.put("user", userService.findUserById(comment.getUserId()));
+                // 点赞数
+                likeCount = likeService.findEntityLikeCount(CommunityConstant.ENTITY_TYPE_COMMENT, comment.getId());
+                commentVo.put("likeCount", likeCount);
+                // 点赞状态
+                likeStatus = hostHolder.getUser() == null ? 0 :
+                        likeService.findEntityLikeStatus(hostHolder.getUser().getId(), CommunityConstant.ENTITY_TYPE_COMMENT, comment.getId());
+                commentVo.put("likeStatus", likeStatus);
 
                 // 回复列表
                 List<Comment> replyList = commentService.findCommentsByEntity(CommunityConstant.ENTITY_TYPE_COMMENT, comment.getId());
@@ -95,6 +112,13 @@ public class DisscussPostController {
                         // 回复的目标
                         User target = reply.getTargetId() == 0 ? null : userService.findUserById(reply.getTargetId());
                         replyVo.put("target", target);
+                        // 点赞数
+                        likeCount = likeService.findEntityLikeCount(CommunityConstant.ENTITY_TYPE_COMMENT, reply.getId());
+                        replyVo.put("likeCount", likeCount);
+                        // 点赞状态
+                        likeStatus = hostHolder.getUser() == null ? 0 :
+                                likeService.findEntityLikeStatus(hostHolder.getUser().getId(), CommunityConstant.ENTITY_TYPE_COMMENT, reply.getId());
+                        replyVo.put("likeStatus", likeStatus);
                         replyVoList.add(replyVo);
                     }
                 }
@@ -105,11 +129,6 @@ public class DisscussPostController {
         }
         model.addAttribute("comments", commentVoList);
         model.addAttribute("pageInfo", pageInfo);
-        int pageFrom = pageInfo.getPageNum() - 2 > 0 ? pageInfo.getPageNum() - 2 : 1;
-        int pageTo = pageInfo.getPageNum() + 2 <= pageInfo.getPages() ? pageInfo.getPageNum() + 2 : pageInfo.getPages();
-        String pagePath = "/discuss/detail/" + discussPostId;
-        model.addAttribute("pageFrom", pageFrom);
-        model.addAttribute("pageTo", pageTo);
         return "/site/discuss-detail";
     }
 }
